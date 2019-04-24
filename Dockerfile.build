@@ -1,0 +1,12 @@
+FROM golang:1.11
+
+RUN mkdir -p /go/src/go_cache
+ENV GOPATH /go
+ENV PATH /go/bin:$PATH
+
+WORKDIR /go/src/go_cache
+
+#复制项目
+COPY . ./
+RUN go test $(go list ./... | grep -v vendor/)
+RUN go build -tags netgo go_cache
