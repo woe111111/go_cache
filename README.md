@@ -1,4 +1,4 @@
-# Varys
+# go_cache
 分布式缓存 提供http,tcp服务  只接受key,value形式的数据
 
 ### 外部接口 
@@ -70,7 +70,7 @@ type inMemoryCache struct {
 package main
 
 import (
-	"Varys/cacheClient"
+	"go_cache/cacheClient"
 	"log"
 )
 
